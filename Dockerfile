@@ -13,4 +13,4 @@ RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 EXPOSE 8080
 
 # Ejecuta la aplicación Spring Boot
-CMD ["java", "-jar", "target/tu-app.jar"]
+CMD ["java", "-jar", "target/v1-0.0.1-SNAPSHOT.jar"]
