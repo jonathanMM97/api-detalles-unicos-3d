@@ -17,8 +17,6 @@ public class Product {
     private String category;
 
     public Product() {}
-
-    // Getters y setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
