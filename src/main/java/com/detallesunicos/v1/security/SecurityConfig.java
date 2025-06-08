@@ -32,7 +32,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("https://www.detallesunicos3d.com/", "https://www.detallesunicos3d.com", "https://detalles-unicos-3d-pfko6y98n-jonathanmm97s-projects.vercel.app/", "https://api-detalles-unicos-3d.onrender.com", "https://detallesunicos3d.com"));
+        config.setAllowedOrigins(List.of("https://www.detallesunicos3d.com"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
