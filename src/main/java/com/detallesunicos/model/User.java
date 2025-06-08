@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Users")  // name exacto de la tabla en la BD
+@Table(name = "Users")
 public class User {
 
     @Id
@@ -16,7 +16,6 @@ public class User {
 
     public User() {}
 
-    // Getters y setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
