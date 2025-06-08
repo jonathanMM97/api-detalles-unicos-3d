@@ -1,22 +1,27 @@
+// Product.java
 package com.detallesunicos.v1.model;
 
 import jakarta.persistence.*;
+import java.util.List;
+import com.detallesunicos.v1.model.MediaFile;
 
 @Entity
 @Table(name = "product")
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
     private String description;
-    @Lob
-    private byte[] image;
     private String category;
 
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MediaFile> mediaFiles;
+
     public Product() {}
+
+    // Getters y setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -25,13 +30,10 @@ public class Product {
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
-    public byte[] getImage() {
-        return image;
-    }
 
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
     public String getCategory() { return category; }
     public void setCategory(String category) { this.category = category; }
+
+    public List<MediaFile> getMediaFiles() { return mediaFiles; }
+    public void setMediaFiles(List<MediaFile> mediaFiles) { this.mediaFiles = mediaFiles; }
 }
